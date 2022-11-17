@@ -1,0 +1,27 @@
+{
+  "name": "lottery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "deploy.js",
+  "scripts": {
+    "compile": "node compile.js",
+    "test": "mocha",
+    "deploy": "node deploy.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "^14.0.0"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.1",
+    "dotenv": "^16.0.3",
+    "ganache-cli": "^6.12.2",
+    "mocha": "^10.1.0",
+    "solc": "^0.4.17",
+    "web3": "^1.0.0-beta.26"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0"
+  }
+}
