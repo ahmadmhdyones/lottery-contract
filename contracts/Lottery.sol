@@ -5,13 +5,21 @@ contract Lottery {
 	address public manager;
 	address[] public players;
 
+	modifier restricted() {
+		require(msg.sender == manager, "Roles: Permission denied");
+		_;
+	}
+
+	modifier greater(uint256 _value) {
+		require(msg.value > _value, "Roles: The value must be greater");
+		_;
+	}
+
 	function Lottery() public {
 		manager = msg.sender;
 	}
 
-	function participate() public payable {
-		require(msg.value > .01 ether);
-
+	function participate() public payable greater(0.01 ether) {
 		players.push(msg.sender);
 	}
 
@@ -25,16 +33,11 @@ contract Lottery {
 		return players;
 	}
 
-	function random() private view returns (uint256) {
-		return uint256(keccak256(block.difficulty, now, players));
-	}
-
 	function reset() private {
 		players = new address[](0);
 	}
 
-	modifier restricted() {
-		require(msg.sender == manager);
-		_;
+	function random() private view returns (uint256) {
+		return uint256(keccak256(block.difficulty, now, players));
 	}
 }

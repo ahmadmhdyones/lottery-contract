@@ -1,17 +1,33 @@
 {
   "name": "lottery",
   "version": "1.0.0",
-  "description": "",
-  "main": "deploy.js",
+  "author": {
+    "name": "Ahmad MHD Yones",
+    "email": "ahmadmhdyones@gmail.com",
+    "url": "http://www.linkedin.com/in/ahmadmhdyones/"
+  },
+  "description": "Lottery Smart Contract based on Ethereum Network",
+  "keywords": [
+    "smart contracts",
+    "ethereum",
+    "solidity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/ahmadmhdyones/lottery"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/ahmadmhdyones/lottery/issues"
+  },
+  "engines": {
+    "node": "^14.20.0"
+  },
+  "main": "index.js",
   "scripts": {
     "compile": "node compile.js",
+    "deploy": "node deploy.js",
     "test": "mocha",
-    "deploy": "node deploy.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "engines": {
-    "node": "^14.0.0"
+    "lint": "prettier --write 'contracts/**/*.sol' & solhint 'contracts/**/*.sol'"
   },
   "dependencies": {
     "@truffle/hdwallet-provider": "^2.1.1",
@@ -22,6 +38,61 @@
     "web3": "^1.0.0-beta.26"
   },
   "devDependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-solidity": "^1.0.0",
+    "solhint": "^3.3.7",
+    "solhint-plugin-prettier": "0.0.5"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "embeddedLanguageFormatting": "auto",
+    "editorconfig": true,
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxSingleQuote": true,
+    "proseWrap": "preserve",
+    "quoteProps": "consistent",
+    "requirePragma": false,
+    "semi": true,
+    "singleAttributePerLine": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false,
+    "vueIndentScriptAndStyle": false,
+    "printWidth": 80,
+    "overrides": [
+      {
+        "files": "*.sol",
+        "options": {
+          "tabWidth": 4,
+          "printWidth": 120,
+          "singleQuote": false,
+          "useTabs": true
+        }
+      }
+    ]
+  },
+  "solhint": {
+    "extends": "solhint:recommended",
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "ordering": "warn",
+      "constructor-syntax": "warn",
+      "compiler-version": [
+        "error",
+        "^0.4.17"
+      ],
+      "code-complexity": [
+        "error",
+        7
+      ]
+    }
   }
 }
