@@ -80,7 +80,18 @@
 
 ![Deployed contract](assets/images/screenshot-2022-11-18-17-19-27.png)
 
-## NOTES
+## Miscellaneous
+
+### Formatting & Linting code
+
+```bash
+npm run lint
+```
+
+![lint code](assets/images/screenshot-2022-11-18-17-37-41.png)
+
+- It will format the code by ***Prettier***, and lint the code by ***Solhint***.
 
 - Solhint linter's configuration placed in `package.json` > `"solhint"`
+
 - Prettier formatter's configuration placed in `package.json` > `"prettier"`
