@@ -6,12 +6,14 @@ contract Lottery {
 	address[] public players;
 
 	modifier restricted() {
-		require(msg.sender == manager, "Roles: Permission denied");
+		// "Roles: Permission denied"
+		require(msg.sender == manager);
 		_;
 	}
 
 	modifier greater(uint256 _value) {
-		require(msg.value > _value, "Roles: The value must be greater");
+		// "Roles: The value must be greater"
+		require(msg.value > _value);
 		_;
 	}
 
