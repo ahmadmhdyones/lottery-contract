@@ -1,5 +1,5 @@
 {
-  "name": "lottery",
+  "name": "lottery-contract",
   "version": "1.0.0",
   "author": {
     "name": "Ahmad MHD Yones",
@@ -14,10 +14,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/ahmadmhdyones/lottery"
+    "url": "https://gitlab.com/ahmadmhdyones/lottery-contract"
   },
   "bugs": {
-    "url": "https://gitlab.com/ahmadmhdyones/lottery/issues"
+    "url": "https://gitlab.com/ahmadmhdyones/lottery-contract/issues"
   },
   "engines": {
     "node": "^14.20.0"
@@ -92,7 +92,8 @@
       "code-complexity": [
         "error",
         7
-      ]
+      ],
+      "reason-string": "off"
     }
   }
 }
